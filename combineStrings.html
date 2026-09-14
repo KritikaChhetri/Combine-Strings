@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Combine Strings</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+        .container {
+            background-color: white;
+            padding: 35px;
+            border-radius: 15px;
+            width: 350px;
+            text-align: center;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        h2 {
+            color: #5a45a0;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            color: #333;
+            font-weight: bold;
+            margin-bottom: 7px;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #b9a7e8;
+            border-radius: 8px;
+            box-sizing: border-box;
+            margin-bottom: 18px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #764ba2;
+        }
+
+        button {
+            background-color: #667eea;
+            color: white;
+            border: none;
+            padding: 11px 25px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #764ba2;
+        }
+
+        #result {
+            margin-top: 20px;
+            color: #5a45a0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h2>Alternate String Combination</h2>
+
+        <label>Enter First String:</label>
+        <input type="text" id="str1">
+
+        <label>Enter Second String:</label>
+        <input type="text" id="str2">
+
+        <button onclick="combineStrings()">Combine</button>
+
+        <p id="result"></p>
+
+    </div>
+
+    <script>
+        function combineStrings() {
+
+            let str1 = document.getElementById("str1").value;
+            let str2 = document.getElementById("str2").value;
+
+            let result = "";
+            let maxLength = Math.max(str1.length, str2.length);
+
+            for (let i = 0; i < maxLength; i++) {
+
+                if (i < str1.length) {
+                    result += str1[i];
+                }
+
+                if (i < str2.length) {
+                    result += str2[i];
+                }
+            }
+
+            document.getElementById("result").innerHTML =
+                "Combined String: " + result;
+        }
+    </script>
+
+</body>
+</html>
